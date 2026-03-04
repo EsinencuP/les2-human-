@@ -1,6 +1,6 @@
 using System;
-using Humanity;
-namespace Humanity
+using Popularity;
+namespace Popularity
 {
    public interface IHoliday
     {
