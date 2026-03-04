@@ -1,6 +1,6 @@
 using System;
-using Humanity;
-namespace Humanity 
+using Popularity;
+namespace Popularity 
 {
 
 public abstract class Human : IHoliday
@@ -37,6 +37,5 @@ public abstract class Human : IHoliday
         
     }
     
-    
-}
+} 
 }
