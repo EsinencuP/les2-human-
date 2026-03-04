@@ -1,6 +1,6 @@
-﻿using System;
-using Humanity;
-namespace Humanity
+using System;
+using Popularity;
+namespace Popularity
 {
 class Program
 {
@@ -43,10 +43,3 @@ class Program
             //
     }
 }
-}
-
-
-
-
-    
-
