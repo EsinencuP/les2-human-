@@ -1,0 +1,14 @@
+E:\Program\Code\human1\bin\Debug\net10.0\human1.exe
+E:\Program\Code\human1\bin\Debug\net10.0\human1.deps.json
+E:\Program\Code\human1\bin\Debug\net10.0\human1.runtimeconfig.json
+E:\Program\Code\human1\bin\Debug\net10.0\human1.dll
+E:\Program\Code\human1\bin\Debug\net10.0\human1.pdb
+E:\Program\Code\human1\obj\Debug\net10.0\human1.GeneratedMSBuildEditorConfig.editorconfig
+E:\Program\Code\human1\obj\Debug\net10.0\human1.AssemblyInfoInputs.cache
+E:\Program\Code\human1\obj\Debug\net10.0\human1.AssemblyInfo.cs
+E:\Program\Code\human1\obj\Debug\net10.0\human1.csproj.CoreCompileInputs.cache
+E:\Program\Code\human1\obj\Debug\net10.0\human1.dll
+E:\Program\Code\human1\obj\Debug\net10.0\refint\human1.dll
+E:\Program\Code\human1\obj\Debug\net10.0\human1.pdb
+E:\Program\Code\human1\obj\Debug\net10.0\human1.genruntimeconfig.cache
+E:\Program\Code\human1\obj\Debug\net10.0\ref\human1.dll
