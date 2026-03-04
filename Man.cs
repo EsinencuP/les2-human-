@@ -1,6 +1,6 @@
 using System;
-using Humanity;
-namespace Humanity
+using Popularity;
+namespace Popularity
 {
 
 
@@ -41,7 +41,6 @@ public class Man : Human
         }
         Console.WriteLine();
         Console.WriteLine();
-    
     }
     
     public void drive () 
@@ -50,12 +49,10 @@ public class Man : Human
             Console.WriteLine("Im driving a car");
             else
             Console.WriteLine("Im going by bus");
-        
     }
     
     public override void SayHi() 
     {
-        
         if (orientation)
         Console.WriteLine("What's up!");
         else
@@ -67,7 +64,6 @@ public class Man : Human
         base.beerDay(); // name = "?"
         money /= 2;
         orientation =! orientation;
-        
     }
     
     }
