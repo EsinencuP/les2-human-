@@ -1,0 +1,5 @@
+ interface IHoliday
+{
+     void beerDay();
+    
+}
