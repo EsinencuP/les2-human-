@@ -1,159 +1,159 @@
 public abstract class Human : IHoliday
 {
-    string name;
-    public int age;
-    public Random random = new Random();
+    string name; //* переменная для хранения имени человека
+    public int age; // * переменная для хранения возраста человека
+    public Random random = new Random(); //* переменная для генерации случайных чисел
 
-    public Human()
+    public Human() //! конструктор по умолчанию, который генерирует случайное имя и возраст для человека
     {
-        string[] names = { "Sasha", "Vasea", "Alex", "Valea", "Jenea" };
-        name = names[random.Next(0, names.Length)];
-        age = random.Next(6, 99);
+        string[] names = { "Sasha", "Vasea", "Alex", "Valea", "Jenea" }; //? массив строк для хранения возможных имен человека
+        name = names[random.Next(0, names.Length)]; //? генерация случайного индекса для выбора имени из массива
+        age = random.Next(6, 99); //? генерация случайного возраста для человека в диапазоне от 6 до 99 лет
     }
 
-    public Human(string a, int b)
+    public Human(string a, int b) //! конструктор с параметрами, который позволяет задать имя и возраст человека при его создании
     {
-        name = a;
-        age = b;
+        name = a; //? присваивание значения параметра a переменной name
+        age = b; //? присваивание значения параметра b переменной age
     }
 
-    public virtual void Print()
+    public virtual void Print() //! виртуальный метод для вывода информации о человеке, который может быть переопределен в производных классах
     {
-        Console.WriteLine($"My name is {this.name}");
-        Console.WriteLine($"My age is {this.age}");
+        Console.WriteLine($"My name is {this.name}"); //? вывод имени человека на консоль
+        Console.WriteLine($"My age is {this.age}"); //? вывод возраста человека на консоль
        
     }
     
-    public abstract void SayHi();
+    public abstract void SayHi(); //! абстрактный метод для приветствия, который должен быть реализован в производных классах
     
-    public virtual void beerDay()
+    public virtual void beerDay() //? виртуальный метод для празднования дня рождения, который может быть переопределен в производных классах
     {
-        name = "?";
+        name = "?"; //? при праздновании дня рождения имя человека становится неизвестным (символ "?")
         
     }
     
     
 }
 
-public class Man : Human
+public class Man : Human //! класс Man, который наследует от класса Human и реализует его абстрактные методы и свойства
 {
-    public byte Iq;
-    public double money;
-    public bool orientation;
+    public byte Iq; //* переменная для хранения IQ мужчины
+    public double money; //* переменная для хранения количества денег у мужчины
+    public bool orientation; //* переменная для хранения сексуальной ориентации мужчины (true - гетеросексуал, false - гомосексуал)
 
-    public Man() : base()
+    public Man() : base() //! конструктор по умолчанию, base() вызывает конструктор базового класса Human для генерации случайного имени и возраста, а затем генерирует случайные значения для IQ, денег и ориентации
     {
-        Iq = (byte)random.Next(70, 110);
-        money = (double)(random.Next(0, 100000) / 10);
-        orientation = (random.Next(0, 10) < 5) ? true : false;
+        Iq = (byte)random.Next(70, 110); //? генерация случайного IQ для мужчины в диапазоне от 70 до 110
+        money = (double)(random.Next(0, 100000) / 10); //? генерация случайного количества денег для мужчины в диапазоне от 0 до 10000 (деление на 10 для получения десятичного значения)
+        orientation = (random.Next(0, 10) < 5) ? true : false; //? генерация случайной сексуальной ориентации для мужчины (50% шанс быть гетеросексуалом и 50% шанс быть гомосексуалом)
     }
 
-    public Man(string x, int y, bool z) : base(x, y)
+    public Man(string x, int y, bool z) : base(x, y) //! конструктор с параметрами, который позволяет задать имя, возраст и ориентацию мужчины при его создании, а также генерирует случайные значения для IQ и денег
     {
-        Iq = (byte)random.Next(70, 110);
-        money = (double)(random.Next(0, 100000) / 10);
-        orientation = z;
+        Iq = (byte)random.Next(70, 110); //? генерация случайного IQ для мужчины в диапазоне от 70 до 110
+        money = (double)(random.Next(0, 100000) / 10); //? генерация случайного количества денег для мужчины в диапазоне от 0 до 10000 (деление на 10 для получения десятичного значения)
+        orientation = z; //? присваивание значения параметра z переменной orientation, которая определяет сексуальную ориентацию мужчины (true - гетеросексуал, false - гомосексуал)
     }
 
-    public override void Print()
+    public override void Print() //! переопределение метода Print() для вывода информации о мужчине, включая его IQ, количество денег и сексуальную ориентацию
     {
-        Console.WriteLine("Hello!");
-        base.Print();
-        Console.WriteLine($"My IQ  - {this.Iq}");
-        Console.WriteLine($"My balance {this.money}$");
+        Console.WriteLine("Hello!"); //? вывод приветствия на консоль
+        base.Print(); //? вызов базового метода Print() для вывода имени и возраста мужчины
+        Console.WriteLine($"My IQ  - {this.Iq}"); //? вывод IQ мужчины на консоль
+        Console.WriteLine($"My balance {this.money}$"); //? вывод количества денег у мужчины на консоль
 
-        if (orientation == true)
+        if (orientation == true) //? проверка сексуальной ориентации мужчины и вывод соответствующего сообщения на консоль
         {
-            Console.WriteLine("I am heterosex");
+            Console.WriteLine("I am heterosex"); //? если orientation равно true, то мужчина является гетеросексуалом, и выводится сообщение "I am heterosex"
         }
         else
         {
-            Console.WriteLine("I am homosex");
+            Console.WriteLine("I am homosex"); //? если orientation равно false, то мужчина является гомосексуалом, и выводится сообщение "I am homosex"
         }
         Console.WriteLine();
         Console.WriteLine();
     
     }
     
-    public void drive () 
+    public void drive () //! метод для определения способа передвижения мужчины в зависимости от количества денег, которым он обладает
     {
-        if (money > 1000 )
+        if (money > 1000 ) //? если количество денег у мужчины больше 1000, то он может позволить себе ездить на машине, и выводится сообщение "Im driving a car"
             Console.WriteLine("Im driving a car");
             else
             Console.WriteLine("Im going by bus");
         
     }
     
-    public override void SayHi() 
+    public override void SayHi() //! переопределение метода SayHi() для вывода приветствия в зависимости от сексуальной ориентации мужчины
     {
         
-        if (orientation)
+        if (orientation) //? если orientation равно true, то мужчина является гетеросексуалом, и выводится сообщение "What's up!"
         Console.WriteLine("What's up!");
         else
         Console.WriteLine("Hi!!!");
     }
     
-    public override void beerDay() 
+    public override void beerDay() //! переопределение метода beerDay() для изменения состояния мужчины после празднования дня рождения, включая изменение имени, количества денег и сексуальной ориентации
     {
-        base.beerDay(); // name = "?"
-        money /= 2;
-        orientation =! orientation;
+        base.beerDay(); // name = "?" //? вызов базового метода beerDay() для изменения имени мужчины на "?"
+        money /= 2; //? после празднования дня рождения количество денег у мужчины уменьшается вдвое
+        orientation =! orientation; //? после празднования дня рождения сексуальная ориентация мужчины меняется на противоположную (если была гетеросексуалом, то становится гомосексуалом, и наоборот)
         
     }
     
     }
     
-class Woman : Human
+class Woman : Human //? класс для женщин, который наследует от класса Human и реализует его абстрактные методы и свойства, а также добавляет свои собственные свойства и методы, связанные с красотой и "битчностью" (уровнем раздражительности) женщины
     {
         
-        float beauty;
-        byte bitchness;
+        float beauty; //* переменная для хранения уровня красоты женщины, который генерируется случайным образом в диапазоне от 0 до 1 (где 0 - некрасивый, а 1 - очень красивый)
+        byte bitchness; //* переменная для хранения уровня "битчности" (раздражительности) женщины, который генерируется случайным образом в диапазоне от 0 до 10 (где 0 - очень спокойная, а 10 - очень раздражительная)
         
         
-        public Woman() : base()
+        public Woman() : base() //! конструктор по умолчанию, base() вызывает конструктор базового класса Human для генерации случайного имени и возраста, а затем генерирует случайные значения для красоты и "битчности" женщины
         {
-            beauty = (float)random.Next(0, 1);
-            bitchness = (byte)random.Next(0, 10);
+            beauty = (float)random.Next(0, 1); //? генерация случайного уровня красоты для женщины в диапазоне от 0 до 1 (где 0 - некрасивый, а 1 - очень красивый)
+            bitchness = (byte)random.Next(0, 10); //? генерация случайного уровня "битчности" (раздражительности) для женщины в диапазоне от 0 до 10 (где 0 - очень спокойная, а 10 - очень раздражительная)
             
         }
         
-        public Woman(string a, int b, byte c) : base(a, b)
+        public Woman(string a, int b, byte c) : base(a, b) //! конструктор с параметрами, который позволяет задать имя, возраст и уровень "битчности" женщины при ее создании, а также генерирует случайное значение для красоты
         {
-            beauty = (float)random.Next(0, 1);
-            bitchness = c;
+            beauty = (float)random.Next(0, 1); //? генерация случайного уровня красоты для женщины в диапазоне от 0 до 1 (где 0 - некрасивый, а 1 - очень красивый)
+            bitchness = c; //? присваивание значения параметра c переменной bitchness, которая определяет уровень "битчности" (раздражительности) женщины (где 0 - очень спокойная, а 10 - очень раздражительная)
             
         }
         
         // $"{a = (b>c)? true:false}"
         
-        public override void Print()
+        public override void Print() //! переопределение метода Print() для вывода информации о женщине, включая ее уровень красоты и "битчности" (раздражительности)
         {
-            Console.WriteLine($"Hello im a woman");
-            base.Print();
-            Console.WriteLine($"beauty {this.beauty}");
-            Console.WriteLine($"bitchness {this.bitchness}");
+            Console.WriteLine($"Hello im a woman"); //? вывод приветствия на консоль
+            base.Print(); //? вызов базового метода Print() для вывода имени и возраста женщины
+            Console.WriteLine($"beauty {this.beauty}"); //? вывод уровня красоты женщины на консоль
+            Console.WriteLine($"bitchness {this.bitchness}"); // ? вывод уровня "битчности" (раздражительности) женщины на консоль
             Console.WriteLine();
             Console.WriteLine();
             
         }
     
-     public void makeUp ()
+     public void makeUp () //? метод для улучшения внешнего вида женщины, который увеличивает ее уровень красоты до 1 и выводит соответствующее сообщение на консоль
      {
-         beauty = 1f;
-         Console.WriteLine("Ola-la, Im prity now...");
+         beauty = 1f; //? после использования макияжа уровень красоты женщины становится равным 1 (очень красивый)
+         Console.WriteLine("Ola-la, Im prity now..."); //? вывод сообщения на консоль, которое говорит о том, что женщина стала красивой после использования макияжа
          
      }
      
-     public override void SayHi() 
+     public override void SayHi() //? переопределение метода SayHi() для вывода приветствия в зависимости от уровня "битчности" (раздражительности) женщины
     {
         
-        if (bitchness< 7)
+        if (bitchness< 7) //? если уровень "битчности" (раздражительности) женщины меньше 7, то она приветствует с помощью сообщения "Hi hi hi!", иначе она выражает свое раздражение с помощью сообщения "F*ck"
         Console.WriteLine("Hi hi hi!");
         else
         Console.WriteLine("F*ck");
     }
     
-    public override void beerDay() 
+    public override void beerDay() //? переопределение метода beerDay() для изменения состояния женщины после празднования дня рождения, включая изменение имени, уровня красоты и "битчности" (раздражительности)
     {
     
         beauty /= 2;
